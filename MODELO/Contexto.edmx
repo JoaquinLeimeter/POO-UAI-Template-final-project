@@ -10,6 +10,7 @@
     <EntitySet Name="Perfiles" EntityType="Contexto.Store.Perfiles" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Formularios" EntityType="Contexto.Store.Formularios" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Permisos" EntityType="Contexto.Store.Permisos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FormularioPermiso" EntityType="Contexto.Store.FormularioPermiso" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="UsuarioPerfil" Association="Contexto.Store.UsuarioPerfil">
       <End Role="Usuario" EntitySet="Usuarios" />
       <End Role="Perfil" EntitySet="Perfiles" />
@@ -18,9 +19,13 @@
       <End Role="Perfil" EntitySet="Perfiles" />
       <End Role="Formulario" EntitySet="Formularios" />
     </AssociationSet>
-    <AssociationSet Name="FormularioPermiso" Association="Contexto.Store.FormularioPermiso">
+    <AssociationSet Name="FK_FormularioPermiso_Formulario" Association="Contexto.Store.FK_FormularioPermiso_Formulario">
       <End Role="Formulario" EntitySet="Formularios" />
+      <End Role="FormularioPermiso" EntitySet="FormularioPermiso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FormularioPermiso_Permiso" Association="Contexto.Store.FK_FormularioPermiso_Permiso">
       <End Role="Permiso" EntitySet="Permisos" />
+      <End Role="FormularioPermiso" EntitySet="FormularioPermiso" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Usuarios">
@@ -57,7 +62,14 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
     <Property Name="NombreSistema" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FormularioPermiso">
+    <Key>
+      <PropertyRef Name="Formulario_Id" />
+      <PropertyRef Name="Permiso_Id" />
+    </Key>
     <Property Name="Formulario_Id" Type="int" Nullable="false" />
+    <Property Name="Permiso_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="UsuarioPerfil">
     <End Role="Usuario" Type="Contexto.Store.Usuarios" Multiplicity="*" />
@@ -83,15 +95,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FormularioPermiso">
+  <Association Name="FK_FormularioPermiso_Formulario">
     <End Role="Formulario" Type="Contexto.Store.Formularios" Multiplicity="1" />
-    <End Role="Permiso" Type="Contexto.Store.Permisos" Multiplicity="*" />
+    <End Role="FormularioPermiso" Type="Contexto.Store.FormularioPermiso" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Formulario">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Permiso">
+      <Dependent Role="FormularioPermiso">
         <PropertyRef Name="Formulario_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FormularioPermiso_Permiso">
+    <End Role="FormularioPermiso" Type="Contexto.Store.FormularioPermiso" Multiplicity="*" />
+    <End Role="Permiso" Type="Contexto.Store.Permisos" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Permiso">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FormularioPermiso">
+        <PropertyRef Name="Permiso_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -108,13 +132,13 @@
             <End Role="Usuario" EntitySet="Usuarios" />
             <End Role="Perfil" EntitySet="Perfiles" />
           </AssociationSet>
-          <AssociationSet Name="PerfilFormulario" Association="Contexto.PerfilFormulario">
-            <End Role="Perfil" EntitySet="Perfiles" />
-            <End Role="Formulario" EntitySet="Formularios" />
-          </AssociationSet>
           <AssociationSet Name="FormularioPermiso" Association="Contexto.FormularioPermiso">
             <End Role="Formulario" EntitySet="Formularios" />
             <End Role="Permiso" EntitySet="Permisos" />
+          </AssociationSet>
+          <AssociationSet Name="PerfilFormulario" Association="Contexto.PerfilFormulario">
+            <End Role="Perfil" EntitySet="Perfiles" />
+            <End Role="Formulario" EntitySet="Formularios" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Usuario">
@@ -144,8 +168,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" />
           <Property Name="NombreSistema" Type="String" Nullable="false" />
-          <NavigationProperty Name="Perfil" Relationship="Contexto.PerfilFormulario" FromRole="Formulario" ToRole="Perfil" />
           <NavigationProperty Name="Permiso" Relationship="Contexto.FormularioPermiso" FromRole="Formulario" ToRole="Permiso" />
+          <NavigationProperty Name="Perfil" Relationship="Contexto.PerfilFormulario" FromRole="Formulario" ToRole="Perfil" />
         </EntityType>
         <EntityType Name="Permiso">
           <Key>
@@ -160,13 +184,13 @@
           <End Type="Contexto.Usuario" Role="Usuario" Multiplicity="*" />
           <End Type="Contexto.Perfil" Role="Perfil" Multiplicity="1" />
         </Association>
-        <Association Name="PerfilFormulario">
-          <End Type="Contexto.Perfil" Role="Perfil" Multiplicity="1" />
-          <End Type="Contexto.Formulario" Role="Formulario" Multiplicity="*" />
-        </Association>
         <Association Name="FormularioPermiso">
-          <End Type="Contexto.Formulario" Role="Formulario" Multiplicity="1" />
+          <End Type="Contexto.Formulario" Role="Formulario" Multiplicity="*" />
           <End Type="Contexto.Permiso" Role="Permiso" Multiplicity="*" />
+        </Association>
+        <Association Name="PerfilFormulario">
+          <End Type="Contexto.Perfil" Role="Perfil" Multiplicity="*" />
+          <End Type="Contexto.Formulario" Role="Formulario" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -219,20 +243,12 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="PerfilFormulario" TypeName="Contexto.PerfilFormulario" StoreEntitySet="Formularios">
-      <EndProperty Name="Perfil">
-        <ScalarProperty Name="Id" ColumnName="Perfil_Id" />
-      </EndProperty>
-      <EndProperty Name="Formulario">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="FormularioPermiso" TypeName="Contexto.FormularioPermiso" StoreEntitySet="Permisos">
+    <AssociationSetMapping Name="FormularioPermiso" TypeName="Contexto.FormularioPermiso" StoreEntitySet="FormularioPermiso">
       <EndProperty Name="Formulario">
         <ScalarProperty Name="Id" ColumnName="Formulario_Id" />
       </EndProperty>
       <EndProperty Name="Permiso">
-        <ScalarProperty Name="Id" ColumnName="Id" />
+        <ScalarProperty Name="Id" ColumnName="Permiso_Id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

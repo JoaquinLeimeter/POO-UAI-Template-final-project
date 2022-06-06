@@ -14,10 +14,17 @@ namespace MODELO
     
     public partial class Permiso
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Permiso()
+        {
+            this.Formulario = new HashSet<Formulario>();
+        }
+    
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string NombreSistema { get; set; }
     
-        public virtual Formulario Formulario { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Formulario> Formulario { get; set; }
     }
 }
