@@ -19,7 +19,11 @@ namespace VISTA
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //aquí hay que hacer una lógica para disablear ciertos botones dependiendo de 
+            //los permisos que tenga el usuario actualmente logueado.
+            //gestionarToolStripMenuItem.Enabled = false;
+            Login login = new Login();
+            login.Show();
         }
 
         private void gestionarToolStripMenuItem_Click(object sender, EventArgs e)

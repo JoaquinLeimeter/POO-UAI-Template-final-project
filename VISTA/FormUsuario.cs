@@ -30,32 +30,30 @@ namespace VISTA
 
         private void FormUsuario_Load(object sender, EventArgs e)
         {
-            List<MODELO.Perfil> lista = new List<MODELO.Perfil>();
-            MODELO.Perfil admin = new MODELO.Perfil();
-            admin.Nombre = "Admin";
+            //List<MODELO.Perfil> lista = new List<MODELO.Perfil>();
+            //MODELO.Perfil admin = new MODELO.Perfil();
+            //admin.Nombre = "Admin";
 
-            List<MODELO.Permiso> listaPermisosAdmin = new List<MODELO.Permiso>();
-            MODELO.Permiso permisoAdmin = new MODELO.Permiso();
-            permisoAdmin.Nombre = "Agregar";
-            permisoAdmin.NombreSistema = "btnAgregar";
-            listaPermisosAdmin.Add(permisoAdmin);
+            //List<MODELO.Permiso> listaPermisosAdmin = new List<MODELO.Permiso>();
+            //MODELO.Permiso permisoAdmin = new MODELO.Permiso();
+            //permisoAdmin.Nombre = "Agregar";
+            //permisoAdmin.NombreSistema = "btnAgregar";
+            //listaPermisosAdmin.Add(permisoAdmin);
 
-            List<MODELO.Formulario> forms = new List<MODELO.Formulario>();
-            MODELO.Formulario formGestionarUsuario = new MODELO.Formulario();
-            formGestionarUsuario.Nombre = "Gestionar Usuarios";
-            formGestionarUsuario.NombreSistema = "formGestionarUsuario";
-            formGestionarUsuario.Permiso = listaPermisosAdmin;
+            //List<MODELO.Formulario> forms = new List<MODELO.Formulario>();
+            //MODELO.Formulario formGestionarUsuario = new MODELO.Formulario();
+            //formGestionarUsuario.Nombre = "Gestionar Usuarios";
+            //formGestionarUsuario.NombreSistema = "formGestionarUsuario";
+            //formGestionarUsuario.Permiso = listaPermisosAdmin;
 
-            List<MODELO.Formulario> listaFormuariosAdmin = new List<MODELO.Formulario>();
-            listaFormuariosAdmin.Add(formGestionarUsuario);
-            admin.Formulario = listaFormuariosAdmin;
+            //List<MODELO.Formulario> listaFormuariosAdmin = new List<MODELO.Formulario>();
+            //listaFormuariosAdmin.Add(formGestionarUsuario);
+            //admin.Formulario = listaFormuariosAdmin;
 
-            lista.Add(admin);
+            //lista.Add(admin);
 
-            CONTROLADORA.ControladoraPerfiles.obtener_instancia().Llenar_Lista_Perfiles(lista);
+            //CONTROLADORA.ControladoraPerfiles.obtener_instancia().Llenar_Lista_Perfiles(lista);
             cmbPerfiles.DataSource = CONTROLADORA.ControladoraPerfiles.obtener_instancia().Listar_Perfiles();
-            // cmbPerfiles.DisplayMember = "Nombre";
-            // cmbPerfiles.ValueMember = "Nombre";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
