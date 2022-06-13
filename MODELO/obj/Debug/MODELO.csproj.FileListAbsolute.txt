@@ -5,6 +5,8 @@ C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\MODELO\b
 C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\MODELO\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\MODELO\bin\Debug\EntityFramework.xml
 C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\MODELO\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\MODELO\obj\Debug\MODELO.csprojResolveAssemblyReference.cache
 C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\MODELO\obj\Debug\MODELO.dll
 C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\MODELO\obj\Debug\MODELO.pdb
+C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\MODELO\obj\Debug\MODELO.csprojAssemblyReference.cache
+C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\MODELO\obj\Debug\MODELO.csproj.CoreCompileInputs.cache
+C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\MODELO\obj\Debug\MODELO.csproj.CopyComplete

@@ -8,6 +8,8 @@ c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\CONTROLA
 c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\CONTROLADORA\bin\Debug\MODELO.dll.config
 c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\CONTROLADORA\bin\Debug\EntityFramework.xml
 c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\CONTROLADORA\bin\Debug\EntityFramework.SqlServer.xml
-c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\CONTROLADORA\obj\Debug\CONTROLADORA.csprojResolveAssemblyReference.cache
 c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\CONTROLADORA\obj\Debug\CONTROLADORA.dll
 c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\CONTROLADORA\obj\Debug\CONTROLADORA.pdb
+C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\CONTROLADORA\obj\Debug\CONTROLADORA.csprojAssemblyReference.cache
+C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\CONTROLADORA\obj\Debug\CONTROLADORA.csproj.CoreCompileInputs.cache
+C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\CONTROLADORA\obj\Debug\CONTROLADORA.csproj.CopyComplete

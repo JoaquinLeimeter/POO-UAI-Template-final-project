@@ -141,7 +141,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Name = "FormUsuario";
-            this.Text = "FormUsuario";
+            this.Text = "  ";
             this.Load += new System.EventHandler(this.FormUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

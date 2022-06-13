@@ -31,5 +31,14 @@ namespace CONTROLADORA
             MODELO.SingletonContexto.obtener_instancia().Contexto.Usuarios.Add(usuario);
             MODELO.SingletonContexto.obtener_instancia().Contexto.SaveChanges();
         }
+        public void Eliminar_Usuario(MODELO.Usuario usuario)
+        {
+            MODELO.SingletonContexto.obtener_instancia().Contexto.Usuarios.Remove(usuario);
+            MODELO.SingletonContexto.obtener_instancia().Contexto.SaveChanges();
+        }
+        public MODELO.Usuario Obtener_Usuario(int CODIGO)
+        {
+            return MODELO.SingletonContexto.obtener_instancia().Contexto.Usuarios.Find(CODIGO);
+        }
     }
 }

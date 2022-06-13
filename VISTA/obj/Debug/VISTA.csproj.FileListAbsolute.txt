@@ -11,7 +11,6 @@ c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\VISTA\bi
 c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\VISTA\bin\Debug\MODELO.dll.config
 c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\VISTA\bin\Debug\EntityFramework.xml
 c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\VISTA\bin\Debug\EntityFramework.SqlServer.xml
-c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\VISTA\obj\Debug\VISTA.csprojResolveAssemblyReference.cache
 c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\VISTA\obj\Debug\VISTA.Properties.Resources.resources
 c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\VISTA\obj\Debug\VISTA.csproj.GenerateResource.Cache
 c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\VISTA\obj\Debug\VISTA.exe
@@ -19,3 +18,7 @@ c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\VISTA\ob
 c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\VISTA\obj\Debug\VISTA.Form1.resources
 c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\VISTA\obj\Debug\VISTA.FormGestionarUsuarios.resources
 c:\users\radium rocket\documents\visual studio 2017\Projects\PROYECTO_1\VISTA\obj\Debug\VISTA.FormUsuario.resources
+C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\VISTA\obj\Debug\VISTA.FormModificarUsuario.resources
+C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\VISTA\obj\Debug\VISTA.csprojAssemblyReference.cache
+C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\VISTA\obj\Debug\VISTA.csproj.CoreCompileInputs.cache
+C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\VISTA\obj\Debug\VISTA.csproj.CopyComplete

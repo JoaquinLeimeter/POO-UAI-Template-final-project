@@ -46,20 +46,20 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="PerfilFormulario" TypeName="Contexto.PerfilFormulario" StoreEntitySet="Formularios">
-      <EndProperty Name="Perfil">
-        <ScalarProperty Name="Id" ColumnName="Perfil_Id" />
-      </EndProperty>
-      <EndProperty Name="Formulario">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="FormularioPermiso" TypeName="Contexto.FormularioPermiso" StoreEntitySet="Permisos">
+    <AssociationSetMapping Name="FormularioPermiso" TypeName="Contexto.FormularioPermiso" StoreEntitySet="FormularioPermiso">
       <EndProperty Name="Formulario">
         <ScalarProperty Name="Id" ColumnName="Formulario_Id" />
       </EndProperty>
       <EndProperty Name="Permiso">
-        <ScalarProperty Name="Id" ColumnName="Id" />
+        <ScalarProperty Name="Id" ColumnName="Permiso_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PerfilFormulario" TypeName="Contexto.PerfilFormulario" StoreEntitySet="PerfilFormulario">
+      <EndProperty Name="Perfil">
+        <ScalarProperty Name="Id" ColumnName="Perfil_Id" />
+      </EndProperty>
+      <EndProperty Name="Formulario">
+        <ScalarProperty Name="Id" ColumnName="Formulario_Id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

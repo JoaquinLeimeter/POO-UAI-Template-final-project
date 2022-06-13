@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/06/2022 18:34:09
+-- Date Created: 06/10/2022 13:16:35
 -- Generated from EDMX file: C:\Users\Radium Rocket\Documents\Visual Studio 2017\Projects\PROYECTO_1\MODELO\Contexto.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [FINAL_2022];
+USE [EJEMPLOBD];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -20,14 +20,17 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_UsuarioPerfil]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Usuarios] DROP CONSTRAINT [FK_UsuarioPerfil];
 GO
-IF OBJECT_ID(N'[dbo].[FK_PerfilFormulario]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Formularios] DROP CONSTRAINT [FK_PerfilFormulario];
-GO
 IF OBJECT_ID(N'[dbo].[FK_FormularioPermiso_Formulario]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[FormularioPermiso] DROP CONSTRAINT [FK_FormularioPermiso_Formulario];
 GO
 IF OBJECT_ID(N'[dbo].[FK_FormularioPermiso_Permiso]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[FormularioPermiso] DROP CONSTRAINT [FK_FormularioPermiso_Permiso];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PerfilFormulario_Perfil]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PerfilFormulario] DROP CONSTRAINT [FK_PerfilFormulario_Perfil];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PerfilFormulario_Formulario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PerfilFormulario] DROP CONSTRAINT [FK_PerfilFormulario_Formulario];
 GO
 
 -- --------------------------------------------------
@@ -48,6 +51,9 @@ IF OBJECT_ID(N'[dbo].[Permisos]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FormularioPermiso]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FormularioPermiso];
+GO
+IF OBJECT_ID(N'[dbo].[PerfilFormulario]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PerfilFormulario];
 GO
 
 -- --------------------------------------------------
