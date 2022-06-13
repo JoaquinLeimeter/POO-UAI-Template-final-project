@@ -26,8 +26,18 @@ namespace VISTA
 
         private void FormGestionarUsuarios_Load(object sender, EventArgs e)
         {
+            try
+            {
+
             List<MODELO.Usuario> listaUsuarios = CONTROLADORA.ControladoraUsuarios.obtener_instancia().Listar_Usuarios();
             dgvGestionarUsuarios.DataSource = listaUsuarios;
+              
+            } catch (Exception Ex)
+            {
+                MessageBox.Show("Error al cargar los usuario" + Ex.Message);
+                //Para cerrar el form cuando hay un error
+                //this.Close();
+            }
         }
 
         private void dgvGestionarUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -23,6 +23,7 @@ namespace VISTA
             usuario.Nombre = txtNombre.Text;
             usuario.Dni = txtDni.Text;
             usuario.Email = txtEmail.Text;
+            usuario.Contraseña = "asd";
             usuario.Perfil = (MODELO.Perfil)cmbPerfiles.SelectedValue;
             CONTROLADORA.ControladoraUsuarios.obtener_instancia().Agregar_Usuario(usuario);
             this.Close();
