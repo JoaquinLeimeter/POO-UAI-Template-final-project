@@ -17,6 +17,7 @@ select
 	from FormularioPermiso 
 	INNER JOIN Formularios ON Formularios.Id=Formulario_Id 
 	INNER JOIN Permisos ON Permisos.Id=Permiso_Id;
+
 go
 select 
 	PerfilFormulario.Perfil_Id,
