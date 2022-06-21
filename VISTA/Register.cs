@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MODELO;
+using CONTROLADORA;
 
 namespace VISTA
 {
@@ -19,15 +21,33 @@ namespace VISTA
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            //validar inputs (podría ser en text change, depende de ustedes)
+            //TODO: validar inputs (podría ser en text change, depende de ustedes)
 
-            //try 
 
-                //crear user
 
-                //abrir app y guardar usuario en currentUser (falta crearlo  en controladora usuario)
+            string nombre = txtUsuario.Text;
+            string contraseña = txtContraseña.Text;
+            string email = txtUsuario.Text;
+            string DNI = txtDni.Text;
+            List<Perfil> listaPerfiles = ControladoraPerfiles.obtener_instancia().Listar_Perfiles();
+            Perfil cliente = listaPerfiles.Find(p => p.Nombre == "Cliente");
 
-            //catch error
+            //ver si se puede usar el consctructor de Usuario directamente.
+            Usuario u = new Usuario();
+
+            u.Nombre = nombre;
+            u.Contraseña = contraseña;
+            u.Email = email;
+            u.Dni = DNI;
+            u.Perfil = cliente;
+
+            //TODO: agregar a current user
+
+            ControladoraUsuarios.obtener_instancia().Agregar_Usuario(u);
+
+            Form1 app = new Form1();
+            app.Show();
+
         }
     }
 }
