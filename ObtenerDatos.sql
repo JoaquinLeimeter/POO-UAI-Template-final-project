@@ -1,4 +1,4 @@
-use TP_MODULO_POO
+use EJEMPLOBD
 
 select * from Usuarios
 go

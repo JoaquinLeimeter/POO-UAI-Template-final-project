@@ -24,12 +24,42 @@ namespace VISTA
             //gestionarToolStripMenuItem.Enabled = false;
             //Login login = new Login();
             //login.Show();
+            MODELO.Usuario usuario = CONTROLADORA.ControladoraUsuarios.obtener_instancia().usuarioActual;
+            
+            List<MODELO.Formulario> formularios_habilitados = CONTROLADORA.ControladoraFormularios.obtener_instancia().Listar_Formularios(usuario);
+            formularios_habilitados.ForEach((formulario) =>
+            {  
+                var items = menuStrip1.Items.Find(formulario.NombreSistema, true);
+                items.ToList().ForEach(each =>
+                {
+                    if (each.Name == formulario.NombreSistema)
+                    {
+                        each.Enabled = true;
+                    }
+                });
+            });
         } 
 
         private void gestionarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormGestionarUsuarios form = new FormGestionarUsuarios();
             form.Show(); 
+        }
+
+        private void listarClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormListaClientes f = new FormListaClientes();
+            f.Show();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

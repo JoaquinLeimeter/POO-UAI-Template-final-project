@@ -41,8 +41,7 @@ namespace VISTA
             u.Dni = DNI;
             u.Perfil = cliente;
 
-            //TODO: agregar a current user
-
+            ControladoraUsuarios.obtener_instancia().Agregar_Usuario_Actual(u);
             ControladoraUsuarios.obtener_instancia().Agregar_Usuario(u);
 
             Form1 app = new Form1();

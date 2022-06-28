@@ -9,6 +9,7 @@ namespace CONTROLADORA
     public class ControladoraUsuarios
     {
         private static ControladoraUsuarios _instancia;
+        public MODELO.Usuario usuarioActual = null;
 
         private ControladoraUsuarios() { }
 
@@ -39,6 +40,11 @@ namespace CONTROLADORA
         public MODELO.Usuario Obtener_Usuario(int CODIGO)
         {
             return MODELO.SingletonContexto.obtener_instancia().Contexto.Usuarios.Find(CODIGO);
+        }
+
+        public void Agregar_Usuario_Actual(MODELO.Usuario usuario)
+        {
+            usuarioActual = usuario;
         }
     }
 }

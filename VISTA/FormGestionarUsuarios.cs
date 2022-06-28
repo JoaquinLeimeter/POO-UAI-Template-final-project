@@ -26,11 +26,13 @@ namespace VISTA
 
         private void FormGestionarUsuarios_Load(object sender, EventArgs e)
         {
+            
+
             try
             {
 
-            List<MODELO.Usuario> listaUsuarios = CONTROLADORA.ControladoraUsuarios.obtener_instancia().Listar_Usuarios();
-            dgvGestionarUsuarios.DataSource = listaUsuarios;
+                List<MODELO.Usuario> listaUsuarios = CONTROLADORA.ControladoraUsuarios.obtener_instancia().Listar_Usuarios();
+                dgvGestionarUsuarios.DataSource = listaUsuarios;
               
             } catch (Exception Ex)
             {

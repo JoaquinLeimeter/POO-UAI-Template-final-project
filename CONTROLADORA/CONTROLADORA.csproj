@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControladoraFormularios.cs" />
     <Compile Include="ControladoraPerfiles.cs" />
     <Compile Include="ControladoraUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
