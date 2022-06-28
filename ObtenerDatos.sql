@@ -13,6 +13,7 @@ select
 	FormularioPermiso.Formulario_Id,
 	Formularios.NombreSistema,
 	FormularioPermiso.Permiso_Id,
+
 	Permisos.Nombre 
 	from FormularioPermiso 
 	INNER JOIN Formularios ON Formularios.Id=Formulario_Id 

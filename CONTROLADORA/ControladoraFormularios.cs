@@ -22,9 +22,9 @@ namespace CONTROLADORA
         }
 
 
-        public List<MODELO.Formulario> Listar_Formularios(MODELO.Usuario usuarioActual)
+        public List<MODELO.Formulario> Listar_Formularios(MODELO.Usuario ul)
         {
-            return usuarioActual.Perfil.Formulario.ToList();
+            return ul.Perfil.Formulario.ToList();
         }
     }
 }

@@ -13,3 +13,4 @@ insert into Permisos values ('Guardar', 'btnGuardar')
 insert into Perfiles values ('Cliente')
 insert into Perfiles values ('Super Admin')
 insert into Perfiles values ('Admin')
+

@@ -1,5 +1,4 @@
 
-
 DELETE FROM FormularioPermiso
 
 DELETE  FROM Permisos
@@ -11,3 +10,5 @@ DELETE FROM Formularios
 DELETE FROM Usuarios
 
 DELETE FROM Perfiles
+
+DBCC CHECKIDENT (' ', RESEED, 0);
