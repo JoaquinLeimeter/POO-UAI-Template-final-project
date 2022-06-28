@@ -1,1 +1,0 @@
-DELETE FROM PerfilFormulario WHERE Perfil_Id = 2 AND Formulario_Id = 4;

@@ -19,22 +19,23 @@ namespace VISTA
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //aquí hay que hacer una lógica para disablear ciertos botones dependiendo de 
-            //los permisos que tenga el usuario actualmente logueado.
-            //gestionarToolStripMenuItem.Enabled = false;
-            //Login login = new Login();
-            //login.Show();
+            //traemos usuario actual
             MODELO.Usuario usuario = CONTROLADORA.ControladoraUsuarios.obtener_instancia().usuarioActual;
             
+            //traemos los formularios de este usuario (ver metodo en controladora)
             List<MODELO.Formulario> formularios_habilitados = CONTROLADORA.ControladoraFormularios.obtener_instancia().Listar_Formularios(usuario);
+            //por cada formulario
             formularios_habilitados.ForEach((formulario) =>
             {  
-                var items = menuStrip1.Items.Find(formulario.NombreSistema, true);
-                items.ToList().ForEach(each =>
+                //buscamos en el menuStrip la lista de opciones o la tab donde se encuentra este formulario
+                var options = menuStrip1.Items.Find(formulario.NombreSistema, true);
+
+                //iteramos sobre esta lista de opciones, por ejemplo: gestionar, listarClientes, etc en la tab Usuarios
+                options.ToList().ForEach(option =>
                 {
-                    if (each.Name == formulario.NombreSistema)
+                    if (option.Name == formulario.NombreSistema)
                     {
-                        each.Enabled = true;
+                        option.Enabled = true;
                     }
                 });
             });

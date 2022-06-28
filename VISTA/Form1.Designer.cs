@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formGestionarUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.listarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +43,7 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionarToolStripMenuItem,
+            this.formGestionarUsuarios,
             this.listarClientesToolStripMenuItem,
             this.agregarToolStripMenuItem});
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
@@ -51,13 +51,13 @@
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
-            // gestionarToolStripMenuItem
+            // formGestionarUsuarios
             // 
-            this.gestionarToolStripMenuItem.Enabled = false;
-            this.gestionarToolStripMenuItem.Name = "gestionarToolStripMenuItem";
-            this.gestionarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionarToolStripMenuItem.Text = "Gestionar";
-            this.gestionarToolStripMenuItem.Click += new System.EventHandler(this.gestionarToolStripMenuItem_Click);
+            this.formGestionarUsuarios.Enabled = false;
+            this.formGestionarUsuarios.Name = "formGestionarUsuarios";
+            this.formGestionarUsuarios.Size = new System.Drawing.Size(180, 22);
+            this.formGestionarUsuarios.Text = "Gestionar";
+            this.formGestionarUsuarios.Click += new System.EventHandler(this.gestionarToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -81,6 +81,7 @@
             // 
             // agregarToolStripMenuItem
             // 
+            this.agregarToolStripMenuItem.Enabled = false;
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
             this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
@@ -96,12 +97,14 @@
             // 
             // listarToolStripMenuItem1
             // 
+            this.listarToolStripMenuItem1.Enabled = false;
             this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
             this.listarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.listarToolStripMenuItem1.Text = "Listar";
             // 
             // agregarToolStripMenuItem1
             // 
+            this.agregarToolStripMenuItem1.Enabled = false;
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
             this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.agregarToolStripMenuItem1.Text = "Agregar";
@@ -135,7 +138,7 @@
         #endregion
 
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem formGestionarUsuarios;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem listarClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
