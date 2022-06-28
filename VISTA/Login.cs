@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CONTROLADORA;
+using MODELO;
 
 namespace VISTA
 {
@@ -15,6 +17,25 @@ namespace VISTA
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            //validar inputs (podría ser en text change, depende de ustedes)
+
+            var listaUsuarios = ControladoraUsuarios.obtener_instancia().Listar_Usuarios();
+            Usuario usuario = listaUsuarios.Find(u => (u.Nombre == txtUsuario.Text || u.Email == txtUsuario.Text) && u.Contraseña == txtContraseña.Text);
+            if (usuario != null)
+            {
+                //agregar a current user
+                Form1 app = new Form1();
+                app.Show();
+            }
+            else
+            {
+                MessageBox.Show("Credenciales inválidas");
+            }
+
         }
     }
 }
