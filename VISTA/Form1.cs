@@ -24,21 +24,55 @@ namespace VISTA
             
             //traemos los formularios de este usuario (ver metodo en controladora)
             List<MODELO.Formulario> formularios_habilitados = CONTROLADORA.ControladoraFormularios.obtener_instancia().Listar_Formularios(usuario);
-            //por cada formulario
+
+            //por cada formulario habilitado, nos conviene porque formularios_habilitados <= todos los formularios para iterar.
+            //esto si no tenemos formularios dentro de formularios, piensen como prefieren hacer esta búsqueda.
             formularios_habilitados.ForEach((formulario) =>
-            {  
+            {
                 //buscamos en el menuStrip la lista de opciones o la tab donde se encuentra este formulario
-                var options = menuStrip1.Items.Find(formulario.NombreSistema, true);
+                //ToolStripItem[] options = menuStrip1.Items.Find(formulario.NombreSistema, true);
+
+                //como el método .Find nos devuelve un arreglo y no un solo item, usamos .First() para acceder a ese formulario
+                //que sabemos que es único porque todos nuestros formularios se llaman distinto.
+                //TODO: buscar un mejor método.
+                //options.First().Enabled = true;
+
+
 
                 //iteramos sobre esta lista de opciones, por ejemplo: gestionar, listarClientes, etc en la tab Usuarios
-                options.ToList().ForEach(option =>
+                //options.ToList().ForEach(option =>
+                //{
+                //    Console.WriteLine("option.name" + option.Name);
+                //    Console.WriteLine("option.name" + option.Name);
+                //    Console.WriteLine("option.name" + option.Name);
+                //    if (option.Name == formulario.NombreSistema)
+                //    {
+                //        option.Enabled = true;
+                //    }
+                //});
+
+                int i = 1;
+                foreach (ToolStripMenuItem categoria in menuStrip1.Items)
                 {
-                    if (option.Name == formulario.NombreSistema)
+                    Console.WriteLine($"{i}: {categoria}");
+                    i++;
+                    int j = 1;
+                    foreach (ToolStripMenuItem form in categoria.DropDownItems)
                     {
-                        option.Enabled = true;
+                        Console.WriteLine($"\t{j}: {form}");
+                        if (form.Name == formulario.NombreSistema)
+                        {
+                            form.Enabled = true;
+                        }
                     }
-                });
+                }
             });
+
+
+            
+
+
+
         } 
 
         private void gestionarToolStripMenuItem_Click(object sender, EventArgs e)
