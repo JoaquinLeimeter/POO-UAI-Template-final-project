@@ -26,11 +26,20 @@ namespace VISTA
 
         private void FormGestionarUsuarios_Load(object sender, EventArgs e)
         {
+            MODELO.Usuario usuarioActual = CONTROLADORA.ControladoraUsuarios.obtener_instancia().usuarioActual;
+            List<MODELO.Formulario> formularios = CONTROLADORA.ControladoraFormularios.obtener_instancia().Listar_Formularios(usuarioActual);
+            MODELO.Formulario thisFormulario = formularios.Find(f => f.NombreSistema == "formGestionarUsuarios");
+            List<MODELO.Permiso> permisos = CONTROLADORA.ControladoraPermisos.obtener_instancia().Listar_Permisos(thisFormulario);
+            permisos.ForEach(p =>
+            {
+                if (p.NombreSistema == "btnAgregar") btnAgregar.Enabled = true;
+            });
+
             try
             {
 
-            List<MODELO.Usuario> listaUsuarios = CONTROLADORA.ControladoraUsuarios.obtener_instancia().Listar_Usuarios();
-            dgvGestionarUsuarios.DataSource = listaUsuarios;
+                List<MODELO.Usuario> listaUsuarios = CONTROLADORA.ControladoraUsuarios.obtener_instancia().Listar_Usuarios();
+                dgvGestionarUsuarios.DataSource = listaUsuarios;
               
             } catch (Exception Ex)
             {

@@ -23,11 +23,11 @@ namespace VISTA
         {
             //validar inputs (podría ser en text change, depende de ustedes)
 
-            var listaUsuarios = ControladoraUsuarios.obtener_instancia().Listar_Usuarios();
+            List<Usuario> listaUsuarios = ControladoraUsuarios.obtener_instancia().Listar_Usuarios();
             Usuario usuario = listaUsuarios.Find(u => (u.Nombre == txtUsuario.Text || u.Email == txtUsuario.Text) && u.Contraseña == txtContraseña.Text);
             if (usuario != null)
             {
-                //agregar a current user
+                ControladoraUsuarios.obtener_instancia().Agregar_Usuario_Actual(usuario);
                 Form1 app = new Form1();
                 app.Show();
             }

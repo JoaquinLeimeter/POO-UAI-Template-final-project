@@ -46,6 +46,7 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Enabled = false;
             this.btnAgregar.Location = new System.Drawing.Point(13, 371);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
@@ -56,6 +57,7 @@
             // 
             // btnModificar
             // 
+            this.btnModificar.Enabled = false;
             this.btnModificar.Location = new System.Drawing.Point(94, 371);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
@@ -66,6 +68,7 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Location = new System.Drawing.Point(175, 371);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
